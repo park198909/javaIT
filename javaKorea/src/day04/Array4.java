@@ -16,31 +16,46 @@ public class Array4 {
 		String str;
 		Scanner sc = new Scanner(System.in);
 		
+		while(true) {
 		System.out.println("\n"+"어느 나라의 수도가 궁금하신가요?");
 		str = sc.next();
-		
-		for(int i=0; i<nations.length; i++) {
-			if(str == nations[i]) {
-			switch(i) {
-				case 0:
-					System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
-					break;
-				case 1:
-					System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
-					break;
-				case 2:
-					System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
-					break;
-				case 3:
-					System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
-					break;
-				case 4:
-					System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
-					break;
-				default:
-				}	
+		int idx = -1;
+			if(str.equals("0")) {
+				System.out.println("프로그램 종료");
+				break;
 			}
-		}
-		
+			for(int i=0; i<nations.length; i++) {
+				if(str.equals(nations[i])) {
+					switch(i) {
+						case 0:
+							System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
+							idx=i;
+							break;
+						case 1:
+							System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
+							idx=i;
+							break;
+						case 2:
+							System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
+							idx=i;
+							break;
+						case 3:
+							System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
+							idx=i;
+							break;
+						case 4:
+							System.out.println(nations[i]+"의 수도는 "+cities[i]+" 입니다.");
+							idx=i;
+							break;
+						default:
+							break;
+					}
+				}
+			}
+			if(idx == -1){
+			System.out.println("없는 나라입니다.");
+			}
+		}	
+		sc.close();
 	}
 }
